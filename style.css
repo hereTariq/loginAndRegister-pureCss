@@ -1,0 +1,106 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: rgb(159, 110, 134);
+  padding-top: 4em;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* form container whose width 300px, height 400px and has white bgcolor. I have set this position relative so that the child of this form container don't go outside.*/
+.form-container{
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  background: #fff;
+  text-align: center;
+  padding: 30px 0;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.sliding-btn{
+  display: inline-block;
+}
+/* labels that is Login and Register sliding button*/
+.sliding-btn label{
+  padding: 0 40px;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+}
+/* hr is the border of the sliding button which has almost red bgcolor*/
+hr{
+  width: 100px;
+  height: 3px;
+  border: none;
+  background: #ff523b;
+  margin-top: 5px;
+  transform: translateX(12px);
+  transition: transform .8s;
+}
+/* form whose position is absolute*/
+form{
+  position: absolute;
+  top: 130px;
+  padding: 0 30px;
+}
+/* inputs */
+form input{
+  width: 100%;
+  border: 1px solid gray;
+  outline: none;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+/* Login and Register styling*/
+form input[type="submit"]{
+  width: 150px;
+  color: #fff;
+  background: #ff523b;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.4s ease;
+  outline: none;
+}
+/* hover effect on Login and Register button*/
+form input[type="submit"]:hover{
+  background: #7a261a;
+}
+/*Both Login and Register form were coming on the same position of form container so i left register form -280px*/
+#reg-form{
+  left: -280px;
+  width: 100%;
+  transition: all .8s;
+}
+#login-form{
+  left: 0;
+  width: 100%;
+  transition: all .8s;
+}
+input[type="radio"]{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+/* clicking style(what to be done when we click on reg-radio btn*/
+#reg-radio:checked + .sliding-btn + #login-form + #reg-form{
+  left: 0;
+}
+/*what to be done when we click on login-radio btn*/
+#reg-radio:checked + .sliding-btn + #login-form{
+  left: 280px;
+}
+/* hr styling (when we click on Register button it goes there and also for Login button*/
+#reg-radio:checked + .sliding-btn hr{
+  transform: translateX(147px);
+}

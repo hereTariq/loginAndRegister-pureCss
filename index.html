@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Index</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="form-container">
+      <!-- ------ radio inputs for clicking effect ------- -->
+      <!-- I have used 'name' attribute so that only one radio input can be checked at a time -->
+      <input type="radio" id="login-radio" name="radio-btn">
+      <input type="radio" id="reg-radio" name="radio-btn">
+      <div class="sliding-btn">
+        <label for="login-radio">Login</label>
+        <label for="reg-radio">Register</label>
+        <hr>
+      </div>
+      <!-- ------- Login form --------- -->
+      <form id="login-form">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Login">
+      </form>
+      <!-- ----------- Registeration form --------- -->
+      <form id="reg-form">
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
